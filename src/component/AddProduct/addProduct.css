@@ -1,0 +1,170 @@
+.add-product-container {
+  height: 100%;
+  overflow-y: auto;
+  padding: 0 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.product-list {
+  margin-bottom: 20px;
+}
+.product-wrapper {
+  max-width: 650px;
+  width: 100%;
+  position: relative;
+}
+
+.product-section {
+  margin-bottom: 10px;
+}
+.product-select{
+width: 100%;
+padding: 0 10px;
+width: 100%;
+height: 32px;
+background-color: white;
+display: flex;
+align-items: center;
+justify-content: space-between;
+/* padding: 0 10px; */
+border-radius: 4px;
+}
+
+.product-row {
+    display: flex;
+    align-items: start;
+    width: 100%;
+  /* display: grid;
+  grid-template-columns: 40px 40px 1fr 160px 20px; */
+  /* align-items: center; */
+  padding: 10px 0;
+  gap: 10px;
+}
+
+.column {
+  /* padding: 0 10px; */
+}
+
+.column .empty {
+  padding: 0;
+}
+
+.drag-handle img {
+  cursor: grab;
+}
+
+.index {
+  color: #666;
+}
+
+.selection-box {
+  width: 100%;
+  height: 32px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+
+.product-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.edit-icon {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+
+.discount-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.discount-action-btn{
+    display: flex;
+    gap: 5px;
+}
+.discount-action-btn input, select{
+    height: 32px;
+    padding: 0 5px;
+    border: none;
+}
+.discount-action-btn input{
+    width: 57px;
+}
+.discount-action-btn select{
+    width: 69px;
+}
+
+.variant-row input{
+  width: 57px;
+  border-radius: 25px;
+}
+.variant-row select{
+  width: 69px;
+  border-radius: 25px;
+}
+.add-discount-btn {
+  width: 141px;
+  height: 32px;
+  background: #008060;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.show-variants-btn {
+  color: #008060;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.variants-container {
+  margin-left: 80px;
+}
+
+.variant-row {
+  align-items: center;
+  padding: 8px 0;
+}
+
+.variant-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.variant-title-box {
+  width: 100%;
+  height: 32px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 25px;
+}
+.add-product-btn-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.add-product-btn {
+  width: 193px;
+  height: 48px;
+  border-radius: 4px;
+  border: 2px solid #008060;
+  color: #008060;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}

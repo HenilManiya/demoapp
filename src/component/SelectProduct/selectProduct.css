@@ -1,0 +1,153 @@
+.modal-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.19);
+  z-index: 1000;
+}
+
+.modal-wrapper {
+  width: 663px;
+  height: 612px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  padding: 6px 10px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.search-box {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.search-input {
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.products-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.product-main {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  gap: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.product-checkbox {
+  margin: 0;
+  height: 24px;
+  width: 24px;
+  accent-color: #008060;
+}
+
+.product-image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.product-title {
+  font-weight: 500;
+}
+
+.variant-item {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 8px 22px 8px 54px ;
+  gap: 22px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.variant-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.variant-title {
+  flex: 1;
+  font-size: 14px;
+}
+
+.variant-availability {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.variant-price {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.modal-footer {
+  padding: 16px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-button {
+  background-color: #008060;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 72px;
+  height: 32px;
+  border: 1px solid #008060;
+}
+
+.action-button-wrapper{
+  display: flex;
+  gap: 5px;
+}
+.cancel-button {
+  background-color: #FFF;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 104px;
+  height: 32px;
+  border: 1px solid #00000066;
+}
