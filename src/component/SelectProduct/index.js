@@ -4,8 +4,6 @@ import { useAddProduct } from "../useAddProduct";
 
 const SelectProductModal = ({
   onClose,
-  handleOnClickProduct,
-  handleOnClickVariant,
   handleAddProduct,
   setTempSelectedProd,
   tempSelectedProd,
@@ -18,11 +16,13 @@ const SelectProductModal = ({
     pagination,
     searchValue,
     debounceSearch,
+    handleOnClickProduct,
+    handleOnClickVariant,
   } = useAddProduct();
 
   useEffect(() => {
     handleGetProduct(pagination.page, pagination.limit, debounceSearch);
-  }, [handleGetProduct,pagination.page, pagination.limit, debounceSearch]);
+  }, [debounceSearch]);
 
   return (
     <div className={`modal-background`}>
@@ -59,15 +59,16 @@ const SelectProductModal = ({
         </div>
 
         <div className="modal-footer">
-          <div><span>{tempSelectedProd?.length} product selected</span></div>
+          <div>
+            <span>{tempSelectedProd?.length} product selected</span>
+          </div>
           <div className="action-button-wrapper">
-
-        <button onClick={onClose} className="cancel-button">
-        Cancel
-          </button>
-          <button onClick={handleAddProduct} className="add-button">
-            Add
-          </button>
+            <button onClick={onClose} className="cancel-button">
+              Cancel
+            </button>
+            <button onClick={handleAddProduct} className="add-button">
+              Add
+            </button>
           </div>
         </div>
       </div>

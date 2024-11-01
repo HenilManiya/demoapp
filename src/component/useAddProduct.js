@@ -11,6 +11,7 @@ export const useAddProduct = () => {
   const [tempSelectedProd, setTempSelectedProd] = useState([]);
   const [pagination, setPagination] = useState({ page: 1, limit: 10 });
   const [searchValue, setSearchValue] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleOnClickAddProduct = () => {
     setSelectedProduct((prev) => [...prev, {}]);
@@ -61,6 +62,14 @@ export const useAddProduct = () => {
       return value;
     });
   };
+  const handleOnChangeDiscount = (e,index) => {
+    const { value, name } = e.target;
+    setSelectedProduct((prev) => {
+      let values = [...prev];
+      values[index] = { ...values[index], [name]: value };
+      return values;
+    });
+  };
 
   const handleDragStart = (index) => {
     setDragId(index);
@@ -95,17 +104,24 @@ export const useAddProduct = () => {
   const handleGetProduct = async (page, limit, search) => {
     const productData = await getProductApi(page, limit, search);
     setProductList(productData);
-
   };
-  const Scroll =async (e) => {
+  const Scroll = async (e) => {
     let { clientHeight, scrollTop, scrollHeight } = e.target;
+    if (isLoading) return;
+    setIsLoading(true);
     if (Math.ceil(clientHeight + scrollTop) >= scrollHeight) {
       setPagination((prev) => {
         return { ...prev, page: prev.page + 1 };
       });
-      const productData = await getProductApi(pagination.page + 1, pagination.limit, searchValue);
-      setProductList((prev)=>[...prev,...productData]);
+      const productData = await getProductApi(
+        pagination.page + 1,
+        pagination.limit,
+        searchValue
+      );
+
+      setProductList((prev) => [...prev, ...productData]);
     }
+    setIsLoading(false);
   };
   const handleOnChangeSearch = (e) => {
     const { value } = e.target;
@@ -133,8 +149,9 @@ export const useAddProduct = () => {
     handleGetProduct,
     Scroll,
     handleOnChangeSearch,
+    handleOnChangeDiscount,
     pagination,
     searchValue,
-    debounceSearch
+    debounceSearch,
   };
 };

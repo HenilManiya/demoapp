@@ -22,7 +22,9 @@ const AddProduct = () => {
     handleAddProduct,
     setTempSelectedProd,
     tempSelectedProd,
+    handleOnChangeDiscount
   } = useAddProduct();
+  console.log(selectedProduct,"selectedProductselectedProduct")
   return (
     <>
       <div className="add-product-container">
@@ -35,7 +37,7 @@ const AddProduct = () => {
             <div className="column">Discount</div>
           </div>
 
-          {selectedProduct.map((item, index) => {
+          {selectedProduct?.map((item, index) => {
             return (
               <div className="product-section" key={index} id={index}>
                 <div
@@ -63,10 +65,11 @@ const AddProduct = () => {
                   <div className="column discount-section">
                     {item?.discount ? (
                       <div className="discount-action-btn">
-                        <input />
-                        <select>
-                          <option>% off</option>
-                          <option>flat off</option>
+                        <input onChange={(e)=>handleOnChangeDiscount(e,index)} name="discountAmount" value={item?.discountAmount}/>
+                        <select onChange={(e)=>handleOnChangeDiscount(e,index)} name="discountType" value={item?.discountType}>
+                          <option selected>Select Disocunt Type</option>
+                          <option value={"% off"}>% off</option>
+                          <option value={"flat off"}>flat off</option>
                         </select>
                       </div>
                     ) : (
